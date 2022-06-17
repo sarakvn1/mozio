@@ -2,6 +2,7 @@ from django.db import models
 from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 
+
 # Create your models here.
 class Provider(models.Model):
     name = models.CharField(max_length=50)
@@ -24,15 +25,18 @@ class ServiceArea(models.Model):
         return f"{self.provider}-{self.name}"
 
     def polygon(self):
-        polygon_list = []
-        ge_json_types = ['Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon']
-        if self.geo_json.get('type') == 'FeatureCollection':
-            feature_list = self.geo_json.get('features')
+        try:
+            feature_list = []
+            ge_json_types = ['Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString', 'MultiPolygon']
+            if self.geo_json.get('type') == 'FeatureCollection':
+                feature_list = self.geo_json.get('features')
+                # coordinates = []
+                # for i in feature_list:
+                #     if i.get('geometry').get('type') is not None and i.get('geometry').get('type') == 'Polygon':
+                #         coordinates = [l for l in i.get('geometry').get('coordinates')]
+                #
+                # # polygon_list = [Polygon(tuple()) for i in coordinates[0]]
+        except Exception as e:
             coordinates = []
-            for i in feature_list:
-                if i.get('geometry').get('type') is not None and i.get('geometry').get('type') == 'Polygon':
-                    coordinates = [l for l in i.get('geometry').get('coordinates')]
-
-            # polygon_list = [Polygon(tuple()) for i in coordinates[0]]
-
-        return coordinates
+        finally:
+            return feature_list

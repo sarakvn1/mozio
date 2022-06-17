@@ -18,7 +18,7 @@ class Provider(models.Model):
 class ServiceArea(models.Model):
     provider = models.ForeignKey(Provider, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    price = models.DecimalField(max_digits=50, decimal_places=2),
+    price = models.PositiveIntegerField(default=0)
     geo_json = models.JSONField()
 
     def __str__(self):

@@ -210,7 +210,7 @@ OUTPUT
 | `provider`      | `string` | **Not Required**.  |
 | `geo_json`      | `string` | **Not Required**.  |
 
-
+###### Update Service Area Item
 ```http
   PUT /service/area/${id}/
 ```

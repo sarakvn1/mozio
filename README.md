@@ -48,6 +48,7 @@ INPUT
 | `longitude` | `string` | **Required**.  |
 
 OUTPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `Id`      | `string` | **Required**.  |
@@ -63,11 +64,13 @@ OUTPUT
   GET /provider/${id}/
 ```
 INPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of item to fetch |
 
 OUTPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | **Required**.  |
@@ -107,6 +110,7 @@ OUTPUT
   PUT /provider/${id}/
 ```
 INPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | **Required**.  |
@@ -131,6 +135,7 @@ OUTPUT
   PATCH /provider/${id}/
 ```
 INPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | **Not Required**.  |
@@ -162,12 +167,13 @@ OUTPUT
 
 | ----------------- | -----------------------| --------------------------------------------------------------- | --------------------------
 
-###### Create Service Area Item
+##### Create Service Area Item
 
 ```http
   POST /service/area/
 ```
 INPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | ** Required**.  |
@@ -202,6 +208,7 @@ INPUT
 | `geo_json`      | `string` | **Not Required**.  |
 
 OUTPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Not Required**.  |
@@ -210,7 +217,9 @@ OUTPUT
 | `provider`      | `string` | **Not Required**.  |
 | `geo_json`      | `string` | **Not Required**.  |
 
-###### Update Service Area Item
+
+##### Update Service Area Item
+
 ```http
   PUT /service/area/${id}/
 ```
@@ -224,6 +233,7 @@ INPUT
 | `geo_json`      | `string` | **Not Required**.  |
 
 OUTPUT
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Not Required**.  |
